@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Automation Bureau - Boost Your Business with AI. Small business, big automation. Making sophisticated technology accessible for startups and SMBs.">
+    <meta name="keywords" content="AI automation, business automation, AI services, SMB, startup technology">
+    <meta name="author" content="AI Automation Bureau">
+    <meta property="og:title" content="Boost Your Business with AI - AI Automation Bureau">
+    <meta property="og:description" content="Small business, big automation. Our AI Automation Bureau simplifies sophisticated technology for startups and SMBs.">
+    <meta property="og:type" content="website">
+    <title>Boost Your Business with AI - AI Automation Bureau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Courier Prime', monospace;
+            font-weight: 700;
+        }
+        
+        /* Retro styling */
+        .retro-border {
+            border: 3px solid #000;
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+        }
+        
+        .retro-button {
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .retro-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+        }
+        
+        .retro-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+        }
+        
+        .retro-card {
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+        
+        .retro-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.15);
+        }
+        
+        .retro-pattern {
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(0, 0, 0, 0.03) 10px,
+                    rgba(0, 0, 0, 0.03) 20px
+                );
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            transition: all 0.3s ease;
+            max-height: 1000px;
+        }
+        
+        .faq-answer.hidden {
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Sticky header animation */
+        header {
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Fade in animation for sections */
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white border-b-4 border-black retro-pattern">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-black border-2 border-black flex items-center justify-center">
+                    <i class="fas fa-robot text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold text-black hidden sm:inline">AI Bureau</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-black font-semibold hover:text-gray-600 transition-colors duration-300 border-b-2 border-transparent hover:border-black">Features</a>
+                <a href="#benefits" class="text-black font-semibold hover:text-gray-600 transition-colors duration-300 border-b-2 border-transparent hover:border-black">Benefits</a>
+                <a href="#testimonials" class="text-black font-semibold hover:text-gray-600 transition-colors duration-300 border-b-2 border-transparent hover:border-black">Testimonials</a>
+                <a href="#about" class="text-black font-semibold hover:text-gray-600 transition-colors duration-300 border-b-2 border-transparent hover:border-black">About</a>
+                <a href="https://example.com" class="retro-button bg-black text-white px-6 py-2 font-bold hover:bg-gray-800">Get Started</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden mobile-menu-button text-black text-2xl p-2 hover:bg-gray-100 transition-colors duration-300 border-2 border-black rounded" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden border-t-4 border-black bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3">
+                <a href="#features" class="block text-black font-semibold py-2 px-3 hover:bg-gray-100 transition-colors duration-300 border-l-4 border-transparent hover:border-black">Features</a>
+                <a href="#benefits" class="block text-black font-semibold py-2 px-3 hover:bg-gray-100 transition-colors duration-300 border-l-4 border-transparent hover:border-black">Benefits</a>
+                <a href="#testimonials" class="block text-black font-semibold py-2 px-3 hover:bg-gray-100 transition-colors duration-300 border-l-4 border-transparent hover:border-black">Testimonials</a>
+                <a href="#about" class="block text-black font-semibold py-2 px-3 hover:bg-gray-100 transition-colors duration-300 border-l-4 border-transparent hover:border-black">About</a>
+                <a href="https://example.com" class="block retro-button bg-black text-white px-6 py-2 font-bold text-center mt-4">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-yellow-50 via-white to-yellow-100 retro-pattern overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-10 right-10 w-24 h-24 border-4 border-black opacity-10 transform rotate-45"></div>
+        <div class="absolute bottom-10 left-10 w-32 h-32 border-4 border-black opacity-10 transform rotate-12"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-8">
+                <!-- Main Heading -->
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-black leading-tight tracking-tight">
+                    Boost Your Business with <span class="relative">
+                        <span class="relative z-2">AI</span>
+                        <span class="absolute -bottom-2 left-0 w-full h-4 bg-yellow-300 -z-1 border-2 border-black"></span>
+                    </span>
+                </h1>
+
+                <!-- Hero Statement -->
+                <p class="text-lg sm:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
+                    Small business, big automation. Our AI Automation Bureau simplifies sophisticated technology, making it accessible and impactful for startups and SMBs. Transform your operations without the complexity.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <a href="https://example.com" class="retro-button bg-black text-white px-8 py-4 font-bold text-lg hover:bg-gray-800 border-4 border-black">
+                        Start Your Automation Journey
+                    </a>
+                    <button class="retro-button bg-white text-black px-8 py-4 font-bold text-lg border-4 border-black hover:bg-gray-100">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Trust Badge -->
+                <div class="pt-8 flex justify-center items-center space-x-2">
+                    <div class="flex space-x-1">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                    <span class="text-black font-semibold">Trusted by 500+ businesses</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 sm:py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-4xl sm:text-5xl font-bold text-black">Why Choose Our AI Automation?</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Powerful features designed specifically for growing businesses</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+                <!-- Feature 1: Budget-Friendly AI -->
+                <div class="retro-card bg-white p-8 border-4 border-black hover:shadow-2xl">
+                    <div class="w-16 h-16 bg-yellow-300 border-4 border-black rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-piggy-bank text-2xl text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-black mb-4">Budget-Friendly AI</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Enterprise-grade artificial intelligence without the enterprise-level price tag. Our flexible pricing models scale with your business, ensuring you only pay for what you use. Perfect for startups and SMBs looking to maximize ROI.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>No hidden fees or surprise charges</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>Transparent, predictable billing</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>Cancel anytime, no lock-in contracts</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2: Quick Setup -->
+                <div class="retro-card bg-white p-8 border-4 border-black hover:shadow-2xl">
+                    <div class="w-16 h-16 bg-blue-300 border-4 border-black rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-2xl text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-black mb-4">Quick Setup</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Get up and running in minutes, not months. Our streamlined onboarding process eliminates technical complexity, allowing your team to start automating immediately. No coding knowledge required.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>5-minute initial setup process</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>Pre-built automation templates</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>Dedicated onboarding specialist</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3: User-Friendly Interfaces -->
+                <div class="retro-card bg-white p-8 border-4 border-black hover:shadow-2xl">
+                    <div class="w-16 h-16 bg-pink-300 border-4 border-black rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hand-pointer text-2xl text-black"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-black mb-4">User-Friendly Interfaces</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Intuitive dashboards and simple controls make managing your AI automation effortless. Our design puts power in your hands without overwhelming complexity. Everyone on your team can master it.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>Drag-and-drop workflow builder</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>Real-time analytics dashboard</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-black font-bold"></i>
+                            <span>Mobile app for on-the-go management</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 sm:py-24 lg:py-32 bg-gray-50 retro-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-4xl sm:text-5xl font-bold text-black">Transformative Benefits for Your Business</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">See real results from day one</p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Benefit 1 -->
+                <div class="flex gap-6 items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-yellow-300 border-3 border-black rounded-full flex items-center justify-center">
+                            <i class="fas fa-clock text-2xl text-black font-bold"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-black mb-3">Save 15+ Hours Per Week</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            Eliminate repetitive manual tasks and free up your team to focus on strategic, high-value work. Our clients report an average time savings of 15+ hours weekly within the first month.
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            That's over 780 hours annually – equivalent to nearly 4 full-time employees working on routine tasks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="flex gap-6 items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-blue-300 border-3 border-black rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-2xl text-black font-bold"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-black mb-3">Boost Productivity by 40%</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            Streamline workflows and eliminate bottlenecks that slow your team down. Automate entire business processes end-to-end, reducing manual handoffs and errors.
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            Our advanced automation orchestrates complex multi-step processes seamlessly across your entire tech stack.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="flex gap-6 items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-pink-300 border-3 border-black rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-2xl text-black font-bold"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-black mb-3">Reduce Errors by 99%</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            AI-powered automation eliminates human error in data entry, processing, and decision-making. Ensure consistency and accuracy across all your business processes.
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            Machine learning algorithms continuously improve accuracy over time, learning from your specific business patterns.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="flex gap-6 items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-green-300 border-3 border-black rounded-full flex items-center justify-center">
+                            <i class="fas fa-dollar-sign text-2xl text-black font-bold"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-black mb-3">Cut Operational Costs by 35%</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            Reduce dependency on manual labor and expensive third-party services. Our automation pays for itself within 3-6 months on average.
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            ROI calculator shows exactly how much you'll save based on your current processes and team size.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="flex gap-6 items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-purple-300 border-3 border-black rounded-full flex items-center justify-center">
+                            <i class="fas fa-rocket text-2xl text-black font-bold"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-black mb-3">Scale Without Adding Staff</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            Handle 10x the workload without proportionally increasing your team size. Automation scales effortlessly with your business growth.
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            Our cloud infrastructure automatically adjusts to handle peak demand without manual intervention.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="flex gap-6 items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-14 h-14 bg-orange-300 border-3 border-black rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-2xl text-black font-bold"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-black mb-3">Improve Team Satisfaction</h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            Your team spends less time on tedious tasks and more time on meaningful work. Higher job satisfaction leads to better retention and productivity.
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            Employees report greater job fulfillment when freed from repetitive manual work to focus on creative problem-solving.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 sm:py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-4xl sm:text-5xl font-bold text-black">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Real results from real businesses</p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                <!-- Testimonial 1 -->
+                <div class="retro-card bg-white p-8 border-4 border-black">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        "This platform transformed how we handle customer data. We went from spending 8 hours daily on data entry to just 30 minutes. The user-friendly interface meant our entire team was productive within hours of setup. Absolutely game-changing for our growing startup."
+                    </p>
+                    <div class="border-t-2 border-black pt-4">
+                        <p class="font-bold text-black text-lg">Sarah Chen</p>
+                        <p class="text-gray-600">Founder & CEO, TechStart Solutions</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="retro-card bg-white p-8 border-4 border-black">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        "We were skeptical about AI at first, but this tool proved its worth immediately. Our invoice processing time dropped from 3 days to 3 hours. The ROI was clear within the first month. Best investment we've made this year."
+                    </p>
+                    <div class="border-t-2 border-black pt-4">
+                        <p class="font-bold text-black text-lg">Marcus Rodriguez</p>
+                        <p class="text-gray-600">Operations Manager, Precision Manufacturing Inc.</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="retro-card bg-white p-8 border-4 border-black">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        "The budget-friendly pricing was exactly what we needed as a small team. We're getting enterprise-level automation without the enterprise-level costs. Their support team is incredibly responsive and helpful. Highly recommend!"
+                    </p>
+                    <div class="border-t-2 border-black pt-4">
+                        <p class="font-bold text-black text-lg">Emily Watson</p>
+                        <p class="text-gray-600">Marketing Director, Creative Agency Co.</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="retro-card bg-white p-8 border-4 border-black">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        "We eliminated almost all manual errors in our order processing. Customer satisfaction is up, our team is happier, and we've freed up resources to work on strategic initiatives. The quick setup meant we were live in days, not weeks."
+                    </p>
+                    <div class="border-t-2 border-black pt-4">
+                        <p class="font-bold text-black text-lg">David Thompson</p>
+                        <p class="text-gray-600">Supply Chain Manager, E-Commerce Retailer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 sm:py-24 lg:py-32 bg-gray-50 retro-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12 space-y-4">
+                <h2 class="text-4xl sm:text-5xl font-bold text-black">About AI Automation Bureau</h2>
+            </div>
+
+            <!-- About Content -->
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Paragraph 1: History -->
+                <div class="retro-card bg-white p-8 border-4 border-black">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Founded in 2020 by a team of former enterprise automation consultants and software engineers, AI Automation Bureau emerged from a simple observation: powerful AI and automation technology existed, but it remained inaccessible to small businesses and startups. Our founders spent years helping Fortune 500 companies implement complex automation solutions, only to realize that the same transformative technology could be simplified and democratized for smaller organizations. We decided to leave the corporate world and build a platform that brings enterprise-grade automation to businesses of all sizes, without the enterprise-grade complexity or price tag.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Today, we're proud to serve over 500 businesses across 15 countries, from scrappy startups to established SMBs. Our team has grown to include machine learning specialists, product designers, and customer success experts, all united by a single mission: making AI automation accessible to everyone.
+                    </p>
+                </div>
+
+                <!-- Paragraph 2: Mission & Values -->
+                <div class="retro-card bg-white p-8 border-4 border-black">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Our mission is to empower small businesses with AI-driven automation that drives real, measurable results. We believe that technology should simplify work, not complicate it. We're committed to building products that are not only powerful but also intuitive, affordable, and backed by exceptional customer support. We measure our success not by the complexity of our technology, but by the tangible impact we have on our clients' businesses.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Our core values guide everything we do: Accessibility (technology should be for everyone), Simplicity (we eliminate unnecessary complexity), Transparency (we're honest about what our platform can and can't do), and Impact (we focus obsessively on delivering real business results). We're not just building software; we're building a movement to democratize automation and help small businesses compete on a level playing field with larger enterprises.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 sm:py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop');">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-8">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-xl text-gray-100 max-w-2xl mx-auto">
+                    Join hundreds of businesses already saving time, reducing costs, and scaling smarter with AI automation.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <a href="https://example.com" class="retro-button bg-yellow-300 text-black px-8 py-4 font-bold text-lg border-4 border-white hover:bg-yellow-200">
+                        Start Your Free Trial
+                    </a>
+                    <button class="retro-button bg-white text-black px-8 py-4 font-bold text-lg border-4 border-white hover:bg-gray-100">
+                        Schedule a Demo
+                    </button>
+                </div>
+                <p class="text-gray-200 text-sm">No credit card required. 14-day free trial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white border-t-4 border-yellow-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-yellow-300 border-2 border-yellow-300 flex items-center justify-center">
+                            <i class="fas fa-robot text-black text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold">AI Bureau</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Empowering small businesses with accessible AI automation technology.
+                    </p>
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-300 transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Column -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-white text-lg">Product</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#features" class="hover:text-yellow-300 transition-colors duration-300">Features</a></li>
+                        <li><a href="#benefits" class="hover:text-yellow-300 transition-colors duration-300">Benefits</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">Pricing</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">Integrations</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">API Docs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-white text-lg">Company</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#about" class="hover:text-yellow-300 transition-colors duration-300">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-yellow-300 transition-colors duration-300">Blog</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">Careers</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">Press</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-white text-lg">Legal</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="privacy.html" class="hover:text-yellow-300 transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-yellow-300 transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">Security</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition-colors duration-300">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t-2 border-gray-800 pt-8">
+                <!-- Footer Bottom -->
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 AI Automation Bureau. All rights reserved.
+                    </p>
+                    <div class="flex items-center space-x-4 text-sm text-gray-400">
+                        <p>Contact: <a href="mailto:bengrauwde@hotmail.com" class="text-yellow-300 hover:underline">bengrauwde@hotmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.querySelector('header nav .mobile-menu-button');
+            const mobileMenu = document.querySelector('header nav .mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
